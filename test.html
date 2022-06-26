@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="display-1">Калькулятор</h1>
+
+  <label class="form-item">
+    <div>Label</div>
+    <input name="total_amount" type="number">
+  </label>
+
+  <label class="form-item" >
+    <div>Label</div>
+    <select class="my-unique-select" id="service_quality">
+      <option value="5">One</option>
+      <option value="10">Two</option>
+      <option value="15">Two</option>
+      <option value="20">Two</option>
+    </select>
+  </label>
+
+  <div class="actions">
+    <button class="calculate-button">Calculate</button>
+    <button class="calculate-button">Calculate</button>
+  </div>
+</div>
+
+<script>
+  // html
+  // JS
+  // CSS
+
+// При клике на кнопку "Посчитать"
+    // 1 - получить информацию со страницы
+    // 2 - работа с переменными
+    // 3 - преобразование страницы по полученным переменным
+
+function findSelectValue () {
+  const select_value = document.querySelector('#service_quality').value
+  if (select_value === 'bad') {
+    return 0
+  }
+  if (select_value === 'good') {
+    return 5
+  }
+}
+
+const service_quality_fee = findSelectValue()
+
+// При клике на кнопку "Очистить"
+  // свои дела
+
+// шаг 1
+const service_quality = Number(document.querySelector('#service_quality').value)
+const total_amount = Number(document.querySelector('input[name="total_amount"]').value)
+console.log('total_amount', total_amount)
+const number_of_clients = 6 // document.querySelector
+
+// шаг 2
+const tip_amount = 100 // calculate on your own
+const amount_per_person = 100 // calculate on your own
+
+// шаг 3
+document.querySelector('#service_quality').textContent = tip_amount
+// remove class .hide
+
+// Кнопка сбросить
+document.querySelector('#service_quality').value = '0'
+document.querySelector('input[name="total_amount"]').value = ''
+</script>
+
+
+<script>
+const button = document.querySelector('.calculate-button')
+
+
+
+button.addEventListener('click', () => {
+  console.log('button clicked')
+})
+
+const amount = Number(document.querySelector('.amount').value)
+const quality = Number(document.querySelector('.quality').value)
+
+console.log(amount, quality)
+
+</script>
+
+<input class="amount" type="text">
+
+<select class="quality">
+  <option value="5">One</option>
+  <option value="10">Two</option>
+  <option value="15">Two</option>
+  <option value="20">Two</option>
+</select>
+
+<input type="text">
+
+<style>
+.form-item input {
+
+}
+
+.my-button {
+  background: #FFDC40;
+  border-radius: 15px;
+  padding: 19px 26px;
+
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+.hide {
+    display: none;
+}
+</style>
+
+</body>
+</html>
+
